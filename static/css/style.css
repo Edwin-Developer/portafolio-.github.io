@@ -58,14 +58,14 @@ body {
     justify-content: center;
 }
 
-.txt-T {
+.txt-T, .txt-P {
     
     display: flex;
     position: absolute;
     margin-top: 220px;
 }
 
-.txt-T h2 {
+.txt-T h2, .txt-P  h2 {
     margin-top: 60px;
     text-align: left;
     position: absolute;
@@ -73,14 +73,14 @@ body {
     font-size: 30px;
 }
 
-.txt-T h1 {
+.txt-T h1, .txt-P  h1 {
     font-size: 150px;
     color: #EDEDED;
     text-transform: uppercase;
     text-shadow:0 0 10px #aaaaaa, 0 0 40px #EDEDED;
 }
 
-.txt-T p {
+.txt-T p, .txt-P  p {
     position: absolute;
     margin-top: 260px;
     color: #EDEDED;
@@ -100,6 +100,7 @@ body {
     margin-left: 65px;
     display: flex;
     margin-top: 100px;
+
 }
 
 .color2 {
@@ -109,7 +110,8 @@ body {
     background-color: #DA0037;
 }
 
-.txt-A {
+.txt-A  {
+    
     margin-left: 25%;
 }
 .txt-A h1 {
@@ -117,12 +119,13 @@ body {
 }
 
 .buttons {
+    
     display: flex;
     gap: 40px;
 }
 
 .txt-A a {
-    
+    margin-left: 110px;
     text-decoration: none;
     color: #EDEDED;
     padding: 10px 40px;
@@ -138,7 +141,13 @@ body {
     transform: scale(1.025);
 }
 
-/* Estilos para el modal */
+.txt-A p {
+    width: 80%;
+    margin-left: 80px;
+    text-align: center;
+    color: #aaa;
+}
+/* Estilos generales para la ventana emergente */
 .modal {
     display: none;
     position: fixed;
@@ -148,33 +157,212 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(29, 29, 29, 0.9);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto; /* Ajusta el margen superior para centrar */
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 85%; /* Ancho de la ventana emergente */
+    max-width: 1100px; /* Ancho máximo del modal */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+    position: relative; /* Permite el cierre al hacer clic fuera de la ventana */
+}
+
+#modalContent {
+    margin-top: 50px;
+
 }
 
 .close {
     color: #aaa;
-    float: right;
+    padding: 2.5px 10px;
+    border-radius: 100px;
+    border: 2px  solid #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
     font-size: 28px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
+    transition: 300ms ease;
+}
+
+.close:hover {
+    border: 2px solid #DA0037;
+    color: #DA0037;
+}
+
+.P-container h1 {
+    color: #EDEDED;
+    margin: 100px;
+    display: flex;
+}
+
+.Proyectos {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin: 100px 50px ;
+    height: 100%;
+}
+
+.Proyect {
+
+    width: 350px;
+    height: 100%;
+    background-color: #444444;
+}
+
+.Proyect h2 {
+    color: #EDEDED;
+    font-size: 25px;
+    text-align: center;
+}
+
+.Proyect img {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 0%;
+    width: 200px;
+    transition: 300ms ease;
+}
+
+.link-btn {
+    text-align: center;
+    width: 350px;
+    height: 100px;
+    background-color: #3333337e;
+    transition: 300ms ease;
+
+}
+ 
+
+.link-btn:hover  {
+    padding-top: 50px;
+
+}
+
+.Proyect .link-btn:hover img {
+    width: 250px;
+    margin-top: -80px;
+    margin-left: -40px;
+}
+
+.link-btn a {
+    top: 50px;
+    left: 25%;
+    position: relative;
+    background-color:#EDEDED;
+    text-decoration: none;
+    padding: 10px 50px;
+    color: #444;
+    border-radius: 50px;
+    transition: 300ms ease;
+
+}
+
+/* Estilos para dispositivos móviles (ancho de pantalla igual o menor a 768px) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Cambia el ancho de la ventana emergente en móviles */
+    }
 }
 
 
+
+
+
+.services h1 {
+    color: #EDEDED;
+    font-size: 50px;
+    margin: 100px 80px;
+    text-transform: uppercase;
+}
+
+.Cont-Servi {
+    margin-top: 100px;
+    justify-content: center;
+    display: flex;
+    gap: 100px;
+    
+}
+
+.services-d {
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    background-color: #DA0037;
+}
+
+.services-dev {
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    background-color: #DA0037;
+}
+
+.services-d img {
+    width: 200px;
+}
+
+.services-dev img {
+    width: 200px;
+}
+
+.services-d h2 {
+    color: #EDEDED;
+    font-size: 40px;
+}
+
+.services-dev h2 {
+    color: #EDEDED;
+    font-size: 40px;
+}
+
+.contact {
+    margin: 100px 0px;
+    text-align: center;
+}
+
+.contact h1 {
+    color: #EDEDED;
+    font-size: 50px;
+}
+
+.redes {
+    margin-left: 43%;
+    font-size: 30px;
+    display: flex;
+    gap: 50px;
+
+}
+
+.redes a {
+    padding: 20px 25px;
+    
+    border: 2px solid #EDEDED;
+    border-radius: 100px;
+    transition: 300ms ease;
+}
+
+.redes a i {
+    color: #EDEDED;
+    transition: .5s ease;
+}
+
+.redes a:hover {
+    border: 2px solid #DA0037;
+}
+
+
+.redes a:hover i{
+    color: #DA0037;
+    
+}
 
 @media (max-width: 768px) {
     .navbar {
@@ -185,6 +373,7 @@ body {
         align-items: center;
         padding: 10px;
         justify-content: center;
+        width: 100%;
     }
     .menu {
         display: none;
@@ -199,6 +388,8 @@ body {
     }
 
     .menu li {
+        border-radius: 0;
+        border: transparent;
         width: 100%;
         padding: 15px ;
         transition: 300ms ease;
@@ -210,12 +401,12 @@ body {
     }
 
     .menu a {
-        padding: 10px 250px;
+        width: 100%;
+        padding: 10px 100px;
         color: #EDEDED;
     }
 
     .menu li:hover a {
-        
         color: #444444;
     }
 
@@ -224,9 +415,15 @@ body {
     }
 
     .menu-toggle {
-        margin-left: 98%;
+        margin-left: 90%;
         display: block;
     }
+
+    .txt-P h1 {
+        font-size: 65px;
+        margin-top: 100px;
+    }    
+
 
     .txt-T h1 {
         font-size: 100px;
@@ -244,7 +441,7 @@ body {
     .About {
         height: 100%;
         width: 330px;
-        margin-left: 35px;
+        margin: 100px auto;
     }
 
     .color2{
@@ -256,6 +453,8 @@ body {
         margin-top: 230px;
     }
 
+    
+
     .txt-A h1 {
         font-size: 30px;
     }
@@ -264,5 +463,61 @@ body {
         margin-left: 5px;
         gap: 15px;
         margin-bottom: 50px;
+    }
+
+    .Cont-Servi {
+        gap: 40px;
+        margin: 50px auto;
+
+    }
+
+    .Cont-Servi h2 {
+        font-size: large;
+    }
+
+    .services-d {
+        height: 100%;
+        width: 40%;
+    }
+
+    .services-d img {
+        width: 50%;
+    }
+
+    .services-dev {
+        height: 100%;
+        width: 40%;
+    }
+
+    .services-dev img {
+        width: 50%;
+    }
+
+    .redes{
+        margin: auto 30%;
+    }
+
+    .Proyectos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .Proyect {
+        margin: auto 5%;
+    }
+
+    .Proyect h2 {
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .Proyect img {
+        width: 300px;
+        height: 140px;
+        margin-top: -50px;
+        margin-left: -70px;
+    }
+
+    .link-btn {
+        width: 100%;
     }
 }

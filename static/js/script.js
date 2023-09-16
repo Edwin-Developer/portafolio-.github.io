@@ -15,25 +15,31 @@ document.addEventListener('click', (e) => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const openModalLink = document.getElementById('openModalLink');
+    const openModalLinks = document.querySelectorAll('.openModalLink');
     const modal = document.getElementById('myModal');
-    const closeModal = document.querySelector('.close');
+    const modalContent = document.getElementById('modalContent');
+    const closeModalButton = document.querySelector('.close');
 
-    // Agrega un evento clic para abrir la ventana emergente
-    openModalLink.addEventListener('click', () => {
-        modal.style.display = 'block';
+    openModalLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const linkURL = link.getAttribute('data-link');
+            modalContent.innerHTML = `<iframe src="${linkURL}" frameborder="0" width="100%" height="870px"></iframe>`;
+            modal.style.display = 'block';
+        });
     });
 
-    // Agrega un evento clic para cerrar la ventana emergente
-    closeModal.addEventListener('click', () => {
+    closeModalButton.addEventListener('click', () => {
+        modalContent.innerHTML = '';
         modal.style.display = 'none';
     });
 
-    // Cierra la ventana emergente si se hace clic fuera de ella
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
+            modalContent.innerHTML = '';
             modal.style.display = 'none';
         }
     });
 });
+
 
